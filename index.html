@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>時刻＆ポモドーロタイマー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+  <div class="container">
+    <header>
+      <!-- 元に戻して、文字でのライト／ナイト切替ボタンにする -->
+      <button id="themeToggle">ライト／ナイト切替</button>
+      <button id="modeToggle">現在時刻／ポモドーロ切替</button>
+      <button id="settingsBtn">⚙️</button>
+    </header>
+    <main>
+      <!-- 現在時刻表示 -->
+      <div id="clockDisplay" class="display">
+        <div id="currentDate"></div>
+        <div id="currentTime"></div>
+      </div>
+      <!-- ポモドーロタイマー表示 -->
+      <div id="pomodoroDisplay" class="display" style="display:none;">
+        <h2 id="timerLabel">Focus</h2>
+        <div id="pomodoroTimer">25:00</div>
+        <button id="startStopBtn">Start</button>
+        <!-- ここに「完全停止」ボタンを追加 -->
+        <button id="resetBtn">完全停止</button>
+        <p id="sessionCount">Session: 0</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- タイマー設定用モーダル -->
+  <div id="settingsModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="closeSettings" class="close">&times;</span>
+      <h2>タイマー設定</h2>
+      <form id="settingsForm">
+        <div>
+          <label for="focusTime">集中時間 (分):</label>
+          <input type="number" id="focusTime" name="focusTime" value="25" min="1">
+        </div>
+        <div>
+          <label for="shortBreak">休憩時間 (短) (分):</label>
+          <input type="number" id="shortBreak" name="shortBreak" value="5" min="1">
+        </div>
+        <div>
+          <label for="sessionsBeforeLong">長い休憩までの集中回数:</label>
+          <input type="number" id="sessionsBeforeLong" name="sessionsBeforeLong" value="4" min="1">
+        </div>
+        <div>
+          <label for="longBreak">休憩時間 (長) (分):</label>
+          <input type="number" id="longBreak" name="longBreak" value="20" min="1">
+        </div>
+        <br>
+        <button type="submit">設定保存</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

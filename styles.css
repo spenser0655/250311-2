@@ -1,0 +1,93 @@
+/* 全体レイアウト */
+body {
+    margin: 0;
+    font-family: "メイリオ", Meiryo, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  header {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "メイリオ", Meiryo, sans-serif;
+    transition: border 0.3s;
+  }
+  
+  /* ライトモード */
+  body.light {
+    background-color: #ffffff; /* 可能な限り白 */
+    color: #333;
+  }
+  body.light button {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* ダークモード */
+  body.dark {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+  body.dark button {
+    border: 1px solid #888;
+    background-color: #555;
+    color: #f0f0f0;
+  }
+  
+  /* ディスプレイ部 */
+  .display {
+    margin-top: 20px;
+  }
+  #currentTime, #pomodoroTimer {
+    font-size: 48px;
+    margin: 10px 0;
+  }
+  
+  /* モーダル */
+  .modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+  }
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  .close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  /* ギアアイコン */
+  #settingsBtn {
+    background: transparent;
+    font-size: 24px;
+    border: none;
+  }
+  
