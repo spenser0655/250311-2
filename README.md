@@ -1,0 +1,3 @@
+thanks for usutaku
+
+ポモドーロタイマーと現在時刻をNotionで埋め込みしたくて作っただけもものです
