@@ -8,6 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff; /* ライトモード時の背景を白に */
 }
 
 .container {
@@ -16,26 +17,91 @@ body {
     padding: 20px;
 }
 
-/* タイマーのフォントサイズを大きく */
-#currentTime, #pomodoroTimer {
-    font-size: 80px;
-    font-weight: bold;
+/* ヘッダーの位置調整 */
+header {
+    margin-top: 20px; /* 上端との間に余白を追加 */
 }
 
-#timerLabel {
-    font-size: 40px;
+/* タイマーや日付のフォントサイズを画面幅いっぱいに */
+#currentTime, #pomodoroTimer {
+    font-size: 10vw; /* 画面の横幅の10% */
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Focus と 日付のフォントサイズをボタンと同じに */
+#timerLabel, #currentDate {
+    font-size: 14px; /* ボタンと同じサイズ */
+    margin-bottom: 10px; /* ボタンとの間に統一した余白 */
+}
+
+/* 日付の上部に余白を追加 */
+#currentDate {
+    margin-top: 20px; /* モード切替ボタンとの間隔を統一 */
 }
 
 /* ボタンのスタイル */
 button {
-    padding: 15px 20px;
-    font-size: 24px;
+    padding: 10px 15px;
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
+    height: 50px; /* 高さ統一 */
+    line-height: 1; /* 高さのズレを防ぐ */
 }
 
+/* 設定アイコン */
+#settingsBtn {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+}
+
+/* モード切替ボタン */
+#themeToggle, #modeToggle {
+    font-size: 14px;
+}
+
+/* Startボタン */
+#startStopBtn {
+    height: 55px; /* 完全停止（■）ボタンと高さを揃えるため調整 */
+}
+
+/* 完全停止ボタン */
 #resetBtn {
-    font-size: 32px;
+    font-size: 20px;
+    height: 50px; /* 調整後も完全に揃うように設定 */
+}
+
+/* 設定モーダルのスタイル */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* ダークモード */
