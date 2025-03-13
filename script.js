@@ -4,6 +4,9 @@ const modeToggle = document.getElementById('modeToggle');
 const body = document.body;
 const clockDisplay = document.getElementById('clockDisplay');
 const pomodoroDisplay = document.getElementById('pomodoroDisplay');
+const settingsBtn = document.getElementById('settingsBtn');
+const settingsModal = document.getElementById('settingsModal');
+const closeSettings = document.getElementById('closeSettings');
 
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark');
@@ -18,6 +21,33 @@ modeToggle.addEventListener('click', () => {
     pomodoroDisplay.style.display = "block";
   }
 });
+
+// 設定モーダルの開閉
+settingsBtn.addEventListener('click', () => {
+  settingsModal.style.display = "flex";
+});
+closeSettings.addEventListener('click', () => {
+  settingsModal.style.display = "none";
+});
+window.addEventListener('click', (e) => {
+  if (e.target === settingsModal) {
+    settingsModal.style.display = "none";
+  }
+});
+
+// 現在時刻表示
+function updateClock() {
+  const now = new Date();
+  const dateStr = now.getFullYear() + "年" +
+                  (now.getMonth() + 1) + "月" +
+                  now.getDate() + "日";
+  const timeStr = now.toLocaleTimeString('ja-JP', { hour12: false });
+
+  document.getElementById('currentDate').textContent = dateStr;
+  document.getElementById('currentTime').textContent = timeStr;
+}
+setInterval(updateClock, 1000);
+updateClock();
 
 // ポモドーロタイマー
 let focusTime = 25 * 60;
