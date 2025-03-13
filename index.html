@@ -9,24 +9,22 @@
 <body class="light">
   <div class="container">
     <header>
-      <!-- 元に戻して、文字でのライト／ナイト切替ボタンにする -->
       <button id="themeToggle">ライト／ナイト切替</button>
       <button id="modeToggle">現在時刻／ポモドーロ切替</button>
       <button id="settingsBtn">⚙️</button>
     </header>
     <main>
       <!-- 現在時刻表示 -->
-      <div id="clockDisplay" class="display">
+      <div id="clockDisplay" class="display" style="display:none;">
         <div id="currentDate"></div>
         <div id="currentTime"></div>
       </div>
       <!-- ポモドーロタイマー表示 -->
-      <div id="pomodoroDisplay" class="display" style="display:none;">
+      <div id="pomodoroDisplay" class="display">
         <h2 id="timerLabel">Focus</h2>
         <div id="pomodoroTimer">25:00</div>
         <button id="startStopBtn">Start</button>
-        <!-- ここに「完全停止」ボタンを追加 -->
-        <button id="resetBtn">完全停止</button>
+        <button id="resetBtn">■</button>
         <p id="sessionCount">Session: 0</p>
       </div>
     </main>
